@@ -27,5 +27,7 @@ Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determi
 </p> 
 
 #### negative_prompt
+By using this hyperparameter, you will be able to remove what you do not want to see in generated image. Additionally, you can change both style and content of the image using negative_prompt. You use the same prompt and seed but you add `negative_prompt` to get the imgae you want. Let's take a look to examples of prompts and images below.
+
 
 
