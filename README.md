@@ -46,3 +46,9 @@ I noticed that I don't want the image with signature or some text on it. That's 
 <p align="center">
   <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
 </p> 
+
+You might have noticed that one of the hands of cat is not attached with the body. Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down" this prompt. 
+
+<p align="center">
+  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/1110321a-16e8-4c46-828e-bd38cd4b2ea3">
+</p> 
