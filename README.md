@@ -35,4 +35,8 @@ Firsty, I used "ugly, poor details" negative prompt and obtained this image.
   <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
 </p> 
 
+Then, I tried "ugly, poor details, distorted face, deformed, big nose, bad art, poorly drawn feet, poorly drawn face" negative prompt and obtained this image.
 
+<p align="center">
+  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f7200f5b-5a1d-4059-ac3e-add9aa44f798">
+</p> 
