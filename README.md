@@ -13,7 +13,7 @@
     
     prompt = "a woman with black hat, vivid colors"
     
-    image = pipeline(prompt, generator=generator).images[0]
+    image = pipeline(prompt, generator=generator).images[0] 
     
     image.save("result.png")
 ```
