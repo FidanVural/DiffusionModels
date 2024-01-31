@@ -26,5 +26,6 @@ Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determi
   <img width="1000" height="200" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/006a35f0-3db6-4c2a-9585-0fa36fa9aab0">
 </p> 
 
+#### negative_prompt
 
 
