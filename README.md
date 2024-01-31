@@ -7,7 +7,8 @@
     
     pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
     
-    pipeline.enable_sequential_cpu_offload()
+    pipeline.enable_sequential_cpu_offload() # for memory reducing
+
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "a woman with black hat, vivid colors"
