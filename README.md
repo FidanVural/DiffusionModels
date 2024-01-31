@@ -7,7 +7,7 @@
     
     pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
     
-    pipeline.enable_sequential_cpu_offload() # for memory reducing
+    pipeline.enable_sequential_cpu_offload() # to reduce memory usage
 
     generator = torch.Generator(device="cuda").manual_seed(30)
     
