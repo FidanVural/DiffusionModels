@@ -32,7 +32,7 @@ By using this hyperparameter, you will be able to remove what you do not want to
 Firsty, I used "ugly, poor details" negative prompt and obtained this image.
 
 <p align="center">
-  <img width="1000" height="200" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
+  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
 </p> 
 
 
