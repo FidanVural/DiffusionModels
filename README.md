@@ -40,3 +40,9 @@ Then, I tried "ugly, poor details, distorted face, deformed, big nose, bad art, 
 <p align="center">
   <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f7200f5b-5a1d-4059-ac3e-add9aa44f798">
 </p> 
+
+I noticed that I don't want the image with signature or some text on it. That's why, I tried this prompt "ugly, poor details, distorted face, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, signature, text" and got this image.
+
+<p align="center">
+  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
+</p> 
