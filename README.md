@@ -12,7 +12,7 @@ By using text-to-image pretrained model, you can generate photos from prompts.
 
     generator = torch.Generator(device="cuda").manual_seed(30)
     
-    prompt = "a woman with black hat, vivid colors"
+    prompt = "Black white cat with a hat, digital art"
     
     image = pipeline(prompt, generator=generator).images[0] 
     
