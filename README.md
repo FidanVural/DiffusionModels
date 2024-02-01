@@ -32,25 +32,25 @@ By using this hyperparameter, you will be able to remove what you do not want to
 Firsty, I used "ugly, poor details" negative prompt and obtained this image.
 
 <p align="center">
-  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
 </p> 
 
 Then, I tried "ugly, poor details, distorted face, deformed, big nose, bad art, poorly drawn feet, poorly drawn face" negative prompt and obtained this image.
 
 <p align="center">
-  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f7200f5b-5a1d-4059-ac3e-add9aa44f798">
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f7200f5b-5a1d-4059-ac3e-add9aa44f798">
 </p> 
 
 I noticed that I don't want the image with signature or some text on it. That's why, I tried this prompt "ugly, poor details, distorted face, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, signature, text" and got this image.
 
 <p align="center">
-  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
 </p> 
 
 You might have noticed that one of the hands of cat is not attached with the body. Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down" this prompt. You can see the result below.
 
 <p align="center">
-  <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/1110321a-16e8-4c46-828e-bd38cd4b2ea3">
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/1110321a-16e8-4c46-828e-bd38cd4b2ea3">
 </p> 
 
 ### generator
@@ -58,3 +58,9 @@ If you want to generate same image every time, you can use generator with a seed
 
 ### height & width
 By changing height and width, you can change the size of the image. 
+
+### num_inference_steps
+
+
+
+
