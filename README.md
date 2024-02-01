@@ -52,3 +52,9 @@ You might have noticed that one of the hands of cat is not attached with the bod
 <p align="center">
   <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/1110321a-16e8-4c46-828e-bd38cd4b2ea3">
 </p> 
+
+### generator
+If you want to generate same image every time, you can use generator with a seed. You can set seed like this `generator = torch.Generator(device="cuda").manual_seed(30)` in the generator.
+
+### height & width
+By changing height and width, you can change the size of the image. 
