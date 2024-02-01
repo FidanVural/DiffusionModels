@@ -63,7 +63,7 @@ By changing height and width, you can change the size of the image.
 
 
 <p align="center">
-  <img width="900" height="400" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
+  <img width="950" height="400" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
 </p> 
 
 
