@@ -1,5 +1,6 @@
 
- ### Stable diffusion v1.5 Text-to-image model
+ ### Stable Diffusion v1.5 Text-to-image Model
+By using text-to-image pretrained model, you can generate photos from prompts. 
 
  ```bash
     from diffusers import AutoPipelineForText2Image
@@ -17,7 +18,7 @@
     
     image.save("result.png")
 ```
-You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. 
+You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you don't have any memory problem, you can remove this line `pipeline.enable_sequential_cpu_offload()`.
 
 #### guidance_scale
 Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determines the influence of prompt on image generation. If guidance_scale is set to lower values, the model tends to be more creative to generate image. Conversely, the model tends to be stricter to follow the prompt if guidance_scale is set to be higher values. Default value of it is 7.5. You can observe the changes of created images based on guidance_scale.
