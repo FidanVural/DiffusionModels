@@ -56,7 +56,7 @@ You might have noticed that one of the hands of cat is not attached with the bod
 #### generator
 If you want to generate same image every time, you can use generator with a seed. You can set seed like this `generator = torch.Generator(device="cuda").manual_seed(30)` in the generator.
 
-### height & width
+#### height & width
 By changing height and width, you can change the size of the image. 
 
 #### num_inference_steps
