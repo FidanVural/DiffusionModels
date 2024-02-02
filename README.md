@@ -27,7 +27,7 @@ Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determi
 <p align="center">
   <img width="1000" height="200" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/006a35f0-3db6-4c2a-9585-0fa36fa9aab0">
 </p> 
-
+ 
 #### negative_prompt
 By using this hyperparameter, you will be able to remove what you do not want to see in generated image. Additionally, you can change both style and content of the image using negative_prompt. You use the same prompt and seed but you add `negative_prompt` to get the imgae you want. Let's take a look to examples of prompts and images below.
 
