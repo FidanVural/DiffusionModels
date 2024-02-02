@@ -69,6 +69,7 @@ By changing height and width, you can change the size of the image.
   <img width="1000" height="400" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
 </p> 
 
-
+#### num_images_per_prompt
+It determines the number of images for every run. Default value of `num_images_per_prompt` is 1.
 
 
