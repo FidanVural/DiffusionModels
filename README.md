@@ -3,21 +3,22 @@
 By using text-to-image pretrained model, you can generate photos from prompts. 
 
  ```bash
-    from diffusers import AutoPipelineForText2Image
     import torch
+    from diffusers import StableDiffusionPipeline
     
     pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
     
-    pipeline.enable_sequential_cpu_offload() # to reduce memory usage
-
+    #pipeline.enable_sequential_cpu_offload()
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
+    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down"
     
-    image = pipeline(prompt, generator=generator).images[0] 
+    image = pipeline(prompt, negative_prompt = negative_prompt, generator=generator, num_inference_steps=75).images[0]
     
     image.save("result.png")
 ```
+
 You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you don't have any memory problem, you can remove this line `pipeline.enable_sequential_cpu_offload()`.
 
 #### guidance_scale
