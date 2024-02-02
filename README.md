@@ -6,7 +6,7 @@ By using text-to-image pretrained model, you can generate photos from prompts.
     import torch
     from diffusers import StableDiffusionPipeline
     
-    pipeline = AutoPipelineForText2Image.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    pipeline = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
     
     #pipeline.enable_sequential_cpu_offload()
     generator = torch.Generator(device="cuda").manual_seed(30)
@@ -14,7 +14,7 @@ By using text-to-image pretrained model, you can generate photos from prompts.
     prompt = "Black white cat with a hat, digital art"
     negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down"
     
-    image = pipeline(prompt, negative_prompt = negative_prompt, generator=generator, num_inference_steps=75).images[0]
+    image = pipeline(prompt, negative_prompt=negative_prompt, generator=generator).images[0]
     
     image.save("result.png")
 ```
@@ -63,6 +63,7 @@ By changing height and width, you can change the size of the image.
 
 #### num_inference_steps
 
+`num_inference_steps` represents the number of denosing steps. If you choose bigger step number, you can obtain a higher-quality image but the process will be slower. You can observe the results.
 
 <p align="center">
   <img width="1000" height="400" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
