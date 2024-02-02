@@ -66,7 +66,7 @@ By changing height and width, you can change the size of the image.
 `num_inference_steps` represents the number of denosing steps. If you choose bigger step number, you can obtain a higher-quality image but the process will be slower. The default value of num_inference_steps is 50. You can observe the results.
 
 <p align="center">
-  <img width="800" height="400" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
+  <img width="800" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
 </p> 
 
 #### num_images_per_prompt
