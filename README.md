@@ -55,7 +55,7 @@ You might have noticed that one of the hands of cat is not attached with the bod
   <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/1110321a-16e8-4c46-828e-bd38cd4b2ea3">
 </p> 
 
-Also, you might have noticed that there is something like that `(watermark:1.3), (text:1.3), (signature:1.3)` in the last prompt. These are called **prompt weights**. You can use these weights in both prompt and negative prompt. You can use this to emphasize some words in propmt or vice versa. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights websites.
+Also, you might have noticed that there is something like that `(watermark:1.3), (text:1.3), (signature:1.3)` in the last prompt. These are called **prompt weights**. You can use these weights in both prompt and negative prompt. You can use this to emphasize some words in propmt or vice versa. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights.
 
 #### generator
 If you want to generate same image every time, you can use generator with a seed. You can set seed like this `generator = torch.Generator(device="cuda").manual_seed(30)` in the generator.
