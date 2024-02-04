@@ -73,6 +73,6 @@ By changing height and width, you can change the size of the image.
 #### num_images_per_prompt
 It determines the number of images for every run. Default value of `num_images_per_prompt` is 1.
 
-You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipelines/stable_diffusion/text2img for more information. 
+You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipelines/stable_diffusion/text2img for more information. Also, you can check other notebooks in the [notebooks](https://github.com/FidanVural/DiffusionModels/tree/master/notebooks) directory.
 
 
