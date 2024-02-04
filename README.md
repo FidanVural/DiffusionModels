@@ -5,18 +5,22 @@ By using text-to-image pretrained model, you can generate photos from prompts.
  ```python
     import torch
     from diffusers import StableDiffusionPipeline
+    from compel import Compel
     
     pipeline = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
     
     #pipeline.enable_sequential_cpu_offload()
     generator = torch.Generator(device="cuda").manual_seed(30)
     
+    compel_proc = Compel(tokenizer=pipeline.tokenizer, text_encoder=pipeline.text_encoder)
+    
     prompt = "Black white cat with a hat, digital art"
-    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"
     
-    image = pipeline(prompt, negative_prompt=negative_prompt, generator=generator).images[0]
+    image = pipeline(prompt=prompt, generator=generator).images[0]
     
-    image.save("result.png")
+    #image.save("result.png")
+
+image
 ```
 
 You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you don't have any memory problem, you can remove this line `pipeline.enable_sequential_cpu_offload()`.
