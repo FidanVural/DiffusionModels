@@ -12,7 +12,7 @@ By using text-to-image pretrained model, you can generate photos from prompts.
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
-    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark), (text), (signature), missing arms, missing legs, lying down"
+    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"
     
     image = pipeline(prompt, negative_prompt=negative_prompt, generator=generator).images[0]
     
@@ -52,7 +52,7 @@ I noticed that I don't want the image with signature or some text on it. That's 
 Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark++, text++, signature++, missing arms, missing legs, lying down" this prompt. I used "++" for giving more importance to these words. We called this `prompt weight`. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights. You can see the result below. 
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/92c435d9-13cf-47c7-b3c3-a1350cba57b8">
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/7dc22de3-4ff7-4a1e-9fd4-6200cb724397">
 </p>
 
 #### generator
