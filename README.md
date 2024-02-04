@@ -2,7 +2,7 @@
  ### Stable Diffusion v1.5 Text-to-image Model
 By using text-to-image pretrained model, you can generate photos from prompts. 
 
- ```bash
+ ```python
     import torch
     from diffusers import StableDiffusionPipeline
     
