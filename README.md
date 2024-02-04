@@ -12,7 +12,7 @@ By using text-to-image pretrained model, you can generate photos from prompts.
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
-    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down"
+    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark), (text), (signature), missing arms, missing legs, lying down"
     
     image = pipeline(prompt, negative_prompt=negative_prompt, generator=generator).images[0]
     
