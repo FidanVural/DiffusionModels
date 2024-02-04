@@ -2,7 +2,7 @@
  ### Stable Diffusion v1.5 Text-to-image Model
 By using text-to-image pretrained model, you can generate photos from prompts. 
 
- ```bash
+ ```python
     import torch
     from diffusers import StableDiffusionPipeline
     
@@ -12,7 +12,7 @@ By using text-to-image pretrained model, you can generate photos from prompts.
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
-    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down"
+    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark), (text), (signature), missing arms, missing legs, lying down"
     
     image = pipeline(prompt, negative_prompt=negative_prompt, generator=generator).images[0]
     
@@ -25,7 +25,7 @@ You can generate photos using this code. Moreover, you can get better images twe
 Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determines the influence of prompt on image generation. If guidance_scale is set to lower values, the model tends to be more creative to generate image. Conversely, the model tends to be stricter to follow the prompt if guidance_scale is set to be higher values. Default value of it is 7.5. You can observe the changes of created images based on guidance_scale.
 
 <p align="center">
-  <img width="1000" height="200" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/006a35f0-3db6-4c2a-9585-0fa36fa9aab0">
+  <img width="1000" height="180" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/006a35f0-3db6-4c2a-9585-0fa36fa9aab0">
 </p> 
  
 #### negative_prompt
@@ -49,11 +49,12 @@ I noticed that I don't want the image with signature or some text on it. That's 
   <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
 </p> 
 
-You might have noticed that one of the hands of cat is not attached with the body. Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark:1.3), (text:1.3), (signature:1.3), missing arms, missing legs, lying down" this prompt. You can see the result below.
+Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark++, text++, signature++, missing arms, missing legs, lying down" this prompt. We used "++" for giving more importance to these words. We called this `prompt weight`. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights. You can see the result below. 
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/1110321a-16e8-4c46-828e-bd38cd4b2ea3">
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/92c435d9-13cf-47c7-b3c3-a1350cba57b8">
 </p> 
+
 
 #### generator
 If you want to generate same image every time, you can use generator with a seed. You can set seed like this `generator = torch.Generator(device="cuda").manual_seed(30)` in the generator.
@@ -63,12 +64,15 @@ By changing height and width, you can change the size of the image.
 
 #### num_inference_steps
 
-`num_inference_steps` represents the number of denosing steps. If you choose bigger step number, you can obtain a higher-quality image but the process will be slower. You can observe the results.
+`num_inference_steps` represents the number of denosing steps. If you choose bigger step number, you can obtain a higher-quality image but the process will be slower. The default value of num_inference_steps is 50. You can observe the results.
 
 <p align="center">
-  <img width="1000" height="400" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
+  <img width="800" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
 </p> 
 
+#### num_images_per_prompt
+It determines the number of images for every run. Default value of `num_images_per_prompt` is 1.
 
+You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipelines/stable_diffusion/text2img for more information. 
 
 
