@@ -3,7 +3,7 @@
 By using text-to-image pretrained model, you can generate photos from prompts. 
 
  ```python
-    import torch
+    iimport torch
     from diffusers import StableDiffusionPipeline
     
     pipeline = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
@@ -12,11 +12,12 @@ By using text-to-image pretrained model, you can generate photos from prompts.
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
-    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, (watermark), (text), (signature), missing arms, missing legs, lying down"
     
-    image = pipeline(prompt, negative_prompt=negative_prompt, generator=generator).images[0]
+    image = pipeline(prompt=prompt, generator=generator).images[0]
     
-    image.save("result.png")
+    #image.save("result.png")
+    
+    image
 ```
 
 You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you don't have any memory problem, you can remove this line `pipeline.enable_sequential_cpu_offload()`.
@@ -49,12 +50,11 @@ I noticed that I don't want the image with signature or some text on it. That's 
   <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
 </p> 
 
-Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark++, text++, signature++, missing arms, missing legs, lying down" this prompt. We used "++" for giving more importance to these words. We called this `prompt weight`. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights. You can see the result below. 
+Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark++, text++, signature++, missing arms, missing legs, lying down" this prompt. I used "++" for giving more importance to these words. We called this `prompt weight`. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights. You can see the result below. 
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/92c435d9-13cf-47c7-b3c3-a1350cba57b8">
-</p> 
-
+  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/7dc22de3-4ff7-4a1e-9fd4-6200cb724397">
+</p>
 
 #### generator
 If you want to generate same image every time, you can use generator with a seed. You can set seed like this `generator = torch.Generator(device="cuda").manual_seed(30)` in the generator.
@@ -67,7 +67,7 @@ By changing height and width, you can change the size of the image.
 `num_inference_steps` represents the number of denosing steps. If you choose bigger step number, you can obtain a higher-quality image but the process will be slower. The default value of num_inference_steps is 50. You can observe the results.
 
 <p align="center">
-  <img width="800" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0ad3dcb9-94f9-4ef7-aba2-2f1f32e105d9">
+  <img width="800" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f472ac6f-6bae-4175-988b-2b6a4e4ed265">
 </p> 
 
 #### num_images_per_prompt
