@@ -1,6 +1,6 @@
 
- ### Stable Diffusion v1.5 Text-to-image Model
-By using text-to-image pretrained model, you can generate photos from prompts. 
+### Stable Diffusion v1.5 Text-to-image
+By using text-to-image pretrained model, you can generate photos from prompts. (Hugging Face Diffusers)[https://huggingface.co/docs/diffusers/index] library has pretrained models for generating images.
 
  ```python
     iimport torch
@@ -75,4 +75,14 @@ It determines the number of images for every run. Default value of `num_images_p
 
 You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipelines/stable_diffusion/text2img for more information. Also, you can check the notebook in the [notebooks](https://github.com/FidanVural/DiffusionModels/tree/master/notebooks) directory for different usages.
 
+
+### Stable Diffusion v1.5 Text-to-image Different Models 
+You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. In this notebook, you can take a look to find some of the models and usages of the models. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
+
+Prompt: "portrait of an pretty ancient woman warrior with tribal makeup, dramatic lighting, mountainous backgrounds, high resolution"
+Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, amateur, beginner, blurry, signature, watermark"
+
+<p align="center">
+  <img width="800" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/222cbcf9-012a-4ae3-8a4d-5e8bc74ceead">
+</p> 
 
