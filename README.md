@@ -79,7 +79,8 @@ You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipe
 ### Stable Diffusion v1.5 Text-to-image Different Models 
 You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. In this notebook, you can take a look to find some of the models and usages of the models. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
 
-Prompt: "portrait of an pretty ancient woman warrior with tribal makeup, dramatic lighting, mountainous backgrounds, high resolution"
+Prompt: "portrait of an pretty ancient woman warrior with tribal makeup detailed, dramatic lighting, mountainous backgrounds, high resolution"
+
 Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, amateur, beginner, blurry, signature, watermark"
 
 <p align="center">
