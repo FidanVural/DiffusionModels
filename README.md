@@ -77,7 +77,7 @@ You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipe
 
 
 ### Stable Diffusion v1.5 Text-to-image Different Models 
-You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. In [text2image_stable_diffusion_1_5_models.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_diffusion_1_5_models.ipynb) notebook, you can take a look to find some of the models and usages of the models. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
+You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. You can take a look to some models and usages of the models in [text2image_stable_diffusion_1_5_models.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_diffusion_1_5_models.ipynb) notebook. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
 
 Prompt: "portrait of an pretty ancient woman warrior with tribal makeup detailed, dramatic lighting, mountainous backgrounds, high resolution"
 
