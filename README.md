@@ -1,6 +1,6 @@
 
 ### Stable Diffusion v1.5 Text-to-image
-By using text-to-image pretrained model, you can generate photos from prompts. (Hugging Face Diffusers)[https://huggingface.co/docs/diffusers/index] library has pretrained models for generating images.
+By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images.
 
  ```python
     iimport torch
@@ -35,25 +35,25 @@ By using this hyperparameter, you will be able to remove what you do not want to
 Firsty, I used "ugly, poor details" negative prompt and obtained this image.
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3380d22a-8c7c-44eb-9da8-8b1d6cafa054">
 </p> 
 
 Then, I tried "ugly, poor details, distorted face, deformed, big nose, bad art, poorly drawn feet, poorly drawn face" negative prompt and obtained this image.
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f7200f5b-5a1d-4059-ac3e-add9aa44f798">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/f7200f5b-5a1d-4059-ac3e-add9aa44f798">
 </p> 
 
 I noticed that I don't want the image with signature or some text on it. That's why, I tried this prompt "ugly, poor details, distorted face, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, signature, text" and got this image.
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/0b6b397b-d3f1-4926-8c24-7546688b6af6">
 </p> 
 
 Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark++, text++, signature++, missing arms, missing legs, lying down" this prompt. I used "++" for giving more importance to these words. We called this `prompt weight`. You can take a look https://dev.dezgo.com/guides/prompt-weighting/ and https://getimg.ai/guides/guide-to-stable-diffusion-prompt-weights. You can see the result below. 
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/7dc22de3-4ff7-4a1e-9fd4-6200cb724397">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/7dc22de3-4ff7-4a1e-9fd4-6200cb724397">
 </p>
 
 #### generator
@@ -77,12 +77,16 @@ You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipe
 
 
 ### Stable Diffusion v1.5 Text-to-image Different Models 
-You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. In this notebook, you can take a look to find some of the models and usages of the models. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
+You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. You can take a look to some models and usages of the models in [text2image_stable_diffusion_1_5_models.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_diffusion_1_5_models.ipynb) notebook. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
 
-Prompt: "portrait of an pretty ancient woman warrior with tribal makeup, dramatic lighting, mountainous backgrounds, high resolution"
+Prompt: "portrait of an pretty ancient woman warrior with tribal makeup detailed, dramatic lighting, mountainous backgrounds, high resolution"
+
 Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, amateur, beginner, blurry, signature, watermark"
 
 <p align="center">
   <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/222cbcf9-012a-4ae3-8a4d-5e8bc74ceead">
 </p> 
 
+
+### Stable Diffusion Schedulers
+Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exists in diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to [text2image_stable_difffusion_1_5_schedulers.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_difffusion_1_5_schedulers.ipynb) notebook for different schedulers' outputs.
