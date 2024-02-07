@@ -1,5 +1,5 @@
 
-### Stable Diffusion v1.5 Text-to-image
+## TEXT TO IMAGE STABLE DIFFUSION v1.5
 By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images.
 
  ```python
@@ -21,6 +21,8 @@ By using text-to-image pretrained model, you can generate photos from prompts. [
 ```
 
 You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you don't have any memory problem, you can remove this line `pipeline.enable_sequential_cpu_offload()`.
+
+### 1) Text To Image Stable Diffusion v1.5 Hyperparameters
 
 #### guidance_scale
 Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determines the influence of prompt on image generation. If guidance_scale is set to lower values, the model tends to be more creative to generate image. Conversely, the model tends to be stricter to follow the prompt if guidance_scale is set to be higher values. Default value of it is 7.5. You can observe the changes of created images based on guidance_scale.
@@ -76,7 +78,7 @@ It determines the number of images for every run. Default value of `num_images_p
 You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipelines/stable_diffusion/text2img for more information. Also, you can check the notebook in the [notebooks](https://github.com/FidanVural/DiffusionModels/tree/master/notebooks) directory for different usages.
 
 
-### Stable Diffusion v1.5 Text-to-image Different Models 
+### 2) Text To Image Stable Diffusion v1.5 Models
 You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. You can take a look to some models and usages of the models in [text2image_stable_diffusion_1_5_models.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_diffusion_1_5_models.ipynb) notebook. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
 
 Prompt: "portrait of an pretty ancient woman warrior with tribal makeup detailed, dramatic lighting, mountainous backgrounds, high resolution"
@@ -88,5 +90,5 @@ Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, am
 </p> 
 
 
-### Stable Diffusion Schedulers
+### 3) Text To Image Stable Diffusion v1.5 Schedulers
 Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to [text2image_stable_difffusion_1_5_schedulers.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_difffusion_1_5_schedulers.ipynb) notebook for different schedulers' outputs.
