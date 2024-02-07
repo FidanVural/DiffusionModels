@@ -87,3 +87,6 @@ Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, am
   <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/222cbcf9-012a-4ae3-8a4d-5e8bc74ceead">
 </p> 
 
+
+### Stable Diffusion Schedulers
+Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exists in diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to [text2image_stable_difffusion_1_5_schedulers.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_difffusion_1_5_schedulers.ipynb) notebook for different schedulers' outputs.
