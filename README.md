@@ -78,7 +78,7 @@ You can take a look to https://huggingface.co/docs/diffusers/v0.13.0/en/api/pipe
 
 
 ### 2) Text To Image Stable Diffusion v1.5 Models
-You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. You can take a look to some models and usages of the models in [text2image_stable_diffusion_1_5_models.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_diffusion_1_5.ipynb) notebook. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
+You can try lots of different Stable Diffusion v1.5 models in https://huggingface.co/models?other=diffusers%3AStableDiffusionPipeline. Additionally, some outputs of the models below are shown. For instance, the first image includes more realistic effects while the second image looks like Vincent Van Gogh's paintings.
 
 Prompt: "portrait of an pretty ancient woman warrior with tribal makeup detailed, dramatic lighting, mountainous backgrounds, high resolution"
 
@@ -90,4 +90,4 @@ Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, am
 
 
 ### 3) Text To Image Stable Diffusion v1.5 Schedulers
-Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to [text2image_stable_difffusion_1_5_schedulers.ipynb](https://github.com/FidanVural/DiffusionModels/blob/master/notebooks/text2image_stable_difffusion_1_5_schedulers.ipynb) notebook for different schedulers' outputs. 
+Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing notebook for different schedulers' outputs. 
