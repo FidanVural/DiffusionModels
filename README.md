@@ -24,14 +24,14 @@ You can generate photos using this code. Moreover, you can get better images twe
 
 ### 1) Text To Image Stable Diffusion v1.5 Hyperparameters
 
-#### guidance_scale
+#### - Guidance Scale
 Let's begin with the `guidance_scale` hyperparameter. The guidance_scale determines the influence of prompt on image generation. If guidance_scale is set to lower values, the model tends to be more creative to generate image. Conversely, the model tends to be stricter to follow the prompt if guidance_scale is set to be higher values. Default value of it is 7.5. You can observe the changes of created images based on guidance_scale.
 
 <p align="center">
   <img width="1000" height="180" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/006a35f0-3db6-4c2a-9585-0fa36fa9aab0">
 </p> 
  
-#### negative_prompt
+#### - Negative Prompt
 By using this hyperparameter, you will be able to remove what you do not want to see in generated image. Additionally, you can change both style and content of the image using negative_prompt. You use the same prompt and seed but you add `negative_prompt` to get the imgae you want. Let's take a look to examples of prompts and images below.
 
 Firsty, I used "ugly, poor details" negative prompt and obtained this image.
@@ -58,14 +58,13 @@ Then I tried "ugly, distorted face, poor details, deformed, big nose, bad art, p
   <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/7dc22de3-4ff7-4a1e-9fd4-6200cb724397">
 </p>
 
-#### generator
+#### - Generator
 If you want to generate same image every time, you can use generator with a seed. You can set seed like this `generator = torch.Generator(device="cuda").manual_seed(30)` in the generator.
 
-#### height & width
+#### - Height & Width
 By changing height and width, you can change the size of the image. 
 
-#### num_inference_steps
-
+#### - Number of inference steps
 `num_inference_steps` represents the number of denosing steps. If you choose bigger step number, you can obtain a higher-quality image but the process will be slower. The default value of num_inference_steps is 50. You can observe the results.
 
 <p align="center">
