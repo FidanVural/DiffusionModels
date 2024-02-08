@@ -90,4 +90,7 @@ Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, am
 
 
 ### 3) Text To Image Stable Diffusion v1.5 Schedulers
-Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing notebook for different schedulers' outputs. 
+Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality.
+
+### CODES
+You can take a look to https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing notebook for related codes with the readme writing.
