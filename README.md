@@ -19,9 +19,12 @@ By using text-to-image pretrained model, you can generate photos from prompts. [
 You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you have a memory problem, you can use this line `pipeline.enable_sequential_cpu_offload()`.
 
 ### CODES
-Text to image Stable diffusion v1.5 hyperparameters, models and schedulers: https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing 
-Text to image stable diffusion v1.5 prompt: https://colab.research.google.com/drive/1WCuR04uKpVKZaao3nbmViwj0Dhz80tyu?authuser=1#scrollTo=wPhimm4pDjCI
-Image to image stable diffusion v1.5 hyperparameters: https://colab.research.google.com/drive/1Uh_X5b2XQvsZSLdyAHEVxAuXQ3LBt_HG#scrollTo=kSsXEmcHWVze
+Text to image Stable diffusion v1.5 hyperparameters, models and schedulers: 
+https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing 
+Text to image stable diffusion v1.5 prompt: 
+https://colab.research.google.com/drive/1WCuR04uKpVKZaao3nbmViwj0Dhz80tyu?authuser=1#scrollTo=wPhimm4pDjCI
+Image to image stable diffusion v1.5 hyperparameters: 
+https://colab.research.google.com/drive/1Uh_X5b2XQvsZSLdyAHEVxAuXQ3LBt_HG#scrollTo=kSsXEmcHWVze
 
 ### 1) Text To Image Stable Diffusion v1.5 Hyperparameters
 
