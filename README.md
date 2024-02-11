@@ -126,7 +126,7 @@ Additionally, you can give more detail about the image that you want. In my prom
 
 Finally, you can take a look at the final image, which includes a negative prompt.
 
-`prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background" + RESOLUTION + LIGHTING + STYLE`
+`prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic"`
 
 `negative_prompt = "ugly, distorted, deformed, mutation, out of frame"`
 
