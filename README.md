@@ -20,6 +20,7 @@ You can generate photos using this code. Moreover, you can get better images twe
 
 ### CODES
 Text to image Stable diffusion v1.5 hyperparameters, models and schedulers: 
+
 https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing 
 
 Text to image stable diffusion v1.5 prompt: 
