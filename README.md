@@ -134,4 +134,4 @@ Finally, you can take a look at the final image, which includes a negative promp
   <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/6faf67d9-37d5-4fd6-a773-e4fd34b0302d">
 </p> 
 
-
+You can find a notebook about techniques of prompt in the CODES section of readme and try other styles, lightings, additional keywords, etc.
