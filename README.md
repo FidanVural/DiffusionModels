@@ -91,8 +91,8 @@ Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, am
 ### 3) Text To Image Stable Diffusion v1.5 Schedulers
 Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality.
 
-### 4) Text To Image Stable Diffusion Prompt 
-Providing a good and detailed prompt to models is important to obtain the desired image. Let's look some prompts.
+### 4) Text To Image Stable Diffusion v1.5 Prompt 
+Providing a good and detailed prompt to models is important to obtain the desired image. I used Dream Shaper model to generate images. Now let's look some prompts.
 
 If you give just subject as a prompt such as `prompt = "A witch"`, you can obtain below image. 
 
