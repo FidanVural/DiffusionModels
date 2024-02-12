@@ -19,7 +19,7 @@ By using text-to-image pretrained model, you can generate photos from prompts. [
 You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you have a memory problem, you can use this line `pipeline.enable_sequential_cpu_offload()`.
 
 ### CODES
-Text to image Stable diffusion v1.5 hyperparameters, models and schedulers: 
+Text to image stable diffusion v1.5 hyperparameters, models and schedulers: 
 
 https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing 
 
