@@ -25,7 +25,7 @@ https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sh
 
 Text to image stable diffusion v1.5 prompt: 
 
-https://colab.research.google.com/drive/1WCuR04uKpVKZaao3nbmViwj0Dhz80tyu?authuser=1#scrollTo=wPhimm4pDjCI
+https://drive.google.com/file/d/1mkDfAgdm00afpiqMsQYSS0EoM0hnwyHk/view?usp=drive_link
 
 Image to image stable diffusion v1.5 hyperparameters: 
 
