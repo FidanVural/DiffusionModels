@@ -1,26 +1,25 @@
 
 ## TEXT TO IMAGE STABLE DIFFUSION v1.5
-By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images.
+By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. 
 
  ```python
     iimport torch
     from diffusers import StableDiffusionPipeline
     
     pipeline = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
-    
-    #pipeline.enable_sequential_cpu_offload()
+ 
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
     
     image = pipeline(prompt=prompt, generator=generator).images[0]
-    
-    #image.save("result.png")
-    
     image
 ```
 
-You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you don't have any memory problem, you can remove this line `pipeline.enable_sequential_cpu_offload()`.
+You can generate photos using this code. Moreover, you can get better images tweaking the hyperparameters. There are lots of hyperparameters and you can observe some results below what happens when we tweak these hyperparameters. Also, if you have a memory problem, you can use this line `pipeline.enable_sequential_cpu_offload()`.
+
+### CODES
+You can take a look [colab notebook](https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing) about text to image stable diffusion v1.5 hyperparameters, models and schedulers.
 
 ### 1) Text To Image Stable Diffusion v1.5 Hyperparameters
 
@@ -90,4 +89,49 @@ Negative prompt: "ugly, distorted face, deformed, bad art, poorly drawn face, am
 
 
 ### 3) Text To Image Stable Diffusion v1.5 Schedulers
-Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality. You can take a look to https://colab.research.google.com/drive/1IuiHKICugKSJogobkw100naEkcKG5mJU?usp=sharing notebook for different schedulers' outputs. 
+Schedulers are used for denoising process of stable diffusion. Scheduler plays an important role in the denoising process because every step's noise level is different from each other. You can try different scheduler algorithms which exist in the diffuser library. Generally, there is a trade-off between speed and quality.
+
+### 4) Text To Image Stable Diffusion v1.5 Prompt 
+Providing a good and detailed prompt to models is important to obtain the desired image. I used Dream Shaper model to generate images. Now let's look some prompts.
+
+If you give just subject as a prompt such as `prompt = "A witch"`, you can obtain below image. 
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/99d04a46-48e2-4fc2-9d92-1d16433b3bab">
+</p> 
+
+Then you can extend your prompt by adding more detail and a style. You can see the result below of this prompt: `prompt = "A beautiful and powerful witch, futuristic"`
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/5d18736d-a8f9-4468-8f80-db6d6ecd6e86">
+</p> 
+
+You can add some resolution keywords like `prompt = "A beautiful and powerful witch, highly detailed, futuristic"`.
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/dbacbf4d-0db4-4ede-b117-e52aadd60328">
+</p> 
+
+It can be added lighting to image such as `prompt = "A beautiful and powerful witch, highly detailed, surrounded by clouds at night, futuristic"`.
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/001c9d46-8d65-4c42-955d-ca4756ad07a7">
+</p> 
+
+Additionally, you can give more detail about the image that you want. In my prompt, I added some details about hair, dress and background. Finally, my prompt is `prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic"`.
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/7ac4c81b-10ef-4dc9-95b2-34b8dbad5d79">
+</p> 
+
+Finally, you can take a look at the final image, which includes a negative prompt.
+
+`prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic"`
+
+`negative_prompt = "ugly, distorted, deformed, mutation, out of frame"`
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/6faf67d9-37d5-4fd6-a773-e4fd34b0302d">
+</p> 
+
+You can find a notebook about techniques of prompt in the CODES section of readme and try other styles, lightings, additional keywords, etc.
