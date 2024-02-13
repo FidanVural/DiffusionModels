@@ -135,3 +135,32 @@ Finally, you can take a look at the final image, which includes a negative promp
 </p> 
 
 You can find a notebook about techniques of prompt in the CODES section of readme and try other styles, lightings, additional keywords, etc.
+
+
+## IMAGE TO IMAGE STABLE DIFFUSION v1.5
+
+Image-to-image is quite similar to text to image, with the main difference being the addition of an initial image alongside the prompt. You can take a look the code below.
+
+ ```python
+    pipeline = StableDiffusionImg2ImgPipeline.from_pretrained("Lykon/dreamshaper-8", torch_dtype=torch.float16, variant="fp16", use_safetensors=True).to("cuda")
+    generator = torch.Generator(device="cuda").manual_seed(30)
+    
+    url = "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg" # random cat image
+    
+    response = requests.get(url)
+    init_image = Image.open(BytesIO(response.content)).convert("RGB")
+    init_image = init_image.resize((512, 512))
+    
+    STYLE = "dark art"
+    RESOLUTION = "highly detailed, "
+    LIGHTING = "surrounded by clouds at night, "
+    
+    prompt = "Portrait of a cat wizard, white color, serious face, putting on a black cloak" + RESOLUTION + LIGHTING + STYLE
+    negative_prompt = "ugly, poorly drawn, bad anatomy, mutation, signature, text, watermark"
+    
+    image = pipeline(prompt=prompt, negative_prompt=negative_prompt, image=init_image, generator=generator).images[0]
+
+    image
+```
+
+Additionally, you can check the [img2img](https://github.com/FidanVural/DiffusionModels/tree/master/img2img) directory to see results and explore various hyperparameters.
