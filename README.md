@@ -142,6 +142,13 @@ You can find a notebook about techniques of prompt in the CODES section of readm
 Image-to-image is quite similar to text to image, with the main difference being the addition of an initial image alongside the prompt. You can take a look the code below.
 
  ```python
+    import torch
+    from diffusers import StableDiffusionImg2ImgPipeline
+    
+    import requests
+    from PIL import Image
+    from io import BytesIO
+
     pipeline = StableDiffusionImg2ImgPipeline.from_pretrained("Lykon/dreamshaper-8", torch_dtype=torch.float16, variant="fp16", use_safetensors=True).to("cuda")
     generator = torch.Generator(device="cuda").manual_seed(30)
     
@@ -164,3 +171,43 @@ Image-to-image is quite similar to text to image, with the main difference being
 ```
 
 Additionally, you can check the [img2img](https://github.com/FidanVural/DiffusionModels/tree/master/img2img) directory to see results and explore various hyperparameters.
+
+## STABLE DIFFUSION INPAINTING
+If you want to modify certain portions of an image, you can use inpainting models. You can use these models to inpaint an image by using a mask.
+
+ ```python
+    import torch
+    from diffusers import StableDiffusionInpaintPipeline
+    
+    import requests
+    from PIL import Image
+    from io import BytesIO
+   
+    # Download the model
+    pipeline = StableDiffusionInpaintPipeline.from_pretrained("runwayml/stable-diffusion-inpainting", torch_dtype=torch.float16, variant="fp16").to("cuda")
+    
+    generator = torch.Generator("cuda").manual_seed(92)
+
+    image_path = "https://raw.githubusercontent.com/CompVis/latent-diffusion/main/data/inpainting_examples/overture-creations-5sI6fQgYIuo.png"
+    
+    response_i = requests.get(image_path)
+    init_image = Image.open(BytesIO(response_i.content)).convert("RGB")
+    init_image = init_image.resize((512, 512))
+    
+    mask_path = "https://raw.githubusercontent.com/CompVis/latent-diffusion/main/data/inpainting_examples/overture-creations-5sI6fQgYIuo_mask.png"
+    
+    response_m = requests.get(mask_path)
+    mask_image = Image.open(BytesIO(response_m.content)).convert("RGB")
+    mask_image = mask_image.resize((512, 512))
+    
+    prompt = "a white cat sitting on a bench"
+    
+    image = pipeline(prompt=prompt, image=init_image, mask_image=mask_image, generator=generator).images[0]
+    image_grid([init_image, mask_image, image], rows=1, cols=3)
+```
+
+You can see the initial image, the mask and the generated image produced by a stable diffusion inpainting model below. Also, you can check the [img2img](https://github.com/FidanVural/DiffusionModels/tree/master/inpainting) to explore other inpainting models.
+
+<p align="center">
+  <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/39a5180f-2076-475e-92df-64b243a61668">
+</p> 
