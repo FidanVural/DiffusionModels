@@ -242,7 +242,7 @@ prompt: `"Portrait of a beautiful and powerful witch, wearing a black dress with
 prompt_2: `"Portrait of a beautiful and powerful witch, highly detailed, surrounded by clouds at night, cyberpunk"`
 
 <p align="center">
-  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/934ccd3c-25e7-4360-acf4-6d8a4a676000">
+  <img width="512" height="512" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/934ccd3c-25e7-4360-acf4-6d8a4a676000">
 </p> 
 
 prompt: `"Portrait of a beautiful and powerful witch, highly detailed, surrounded by clouds at night, cyberpunk"`
@@ -250,15 +250,14 @@ prompt: `"Portrait of a beautiful and powerful witch, highly detailed, surrounde
 prompt_2: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic, fantasy"`
 
 <p align="center">
-  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3275dcfc-d7c8-4937-9184-44584a1d1d74">
+  <img width="512" height="512" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3275dcfc-d7c8-4937-9184-44584a1d1d74">
 </p> 
 
 Another hyperparameter is **negative_original_size**. You can see the effects of negative_original_size to below images. 
 
-![witch_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/614702e1-8faa-484e-adb4-dc0fda7b292d) | ![512](https://github.com/FidanVural/DiffusionModels/assets/56233156/323cc7fe-5910-4b35-9c63-815137693698) | ![256](https://github.com/FidanVural/DiffusionModels/assets/56233156/bb8ff9c0-aad6-460a-9bbe-e0243dc4ba2c)
-
-:------------------------:|:-------------------------:|:-------------------------:
-Original          |     negative_original_size: 512x512   |  negative_original_size: 256x256
+![512](https://github.com/FidanVural/DiffusionModels/assets/56233156/323cc7fe-5910-4b35-9c63-815137693698) | ![256](https://github.com/FidanVural/DiffusionModels/assets/56233156/bb8ff9c0-aad6-460a-9bbe-e0243dc4ba2c)
+:------------------------:|:-------------------------:|
+negative_original_size: 512x512   |  negative_original_size: 256x256
 
 
 
