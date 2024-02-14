@@ -223,7 +223,17 @@ The Stable Diffusion XL model ia larger model than v1.5 that it can be used for 
 `negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"`
 
 
-![gan_real_opt](https://github.com/FidanVural/GAN/assets/56233156/ebb9816a-e815-4ba8-a419-7263d69e5fbd) | ![gan_fake_opt](https://github.com/FidanVural/GAN/assets/56233156/148ca590-4795-494b-93ec-a925deee9989)
+![result_neg_6](https://github.com/FidanVural/DiffusionModels/assets/56233156/27617450-2759-435e-9aae-1caf19fbf44a) | ![cat_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/2a7b9c75-fe7c-4be9-8961-2c4b68df2b65)
 :------------------------:|:-------------------------:
-Target Images             |  Fake Images
+Stable Diffusion v1.5              |  SDXL
+
+`prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background" + RESOLUTION + LIGHTING + STYLE`
+
+`negative_prompt = "ugly, distorted, deformed, mutation, out of frame"`
+
+![last](https://github.com/FidanVural/DiffusionModels/assets/56233156/bf380248-9f73-4375-80e3-0ae479902d3e) | ![witch_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/614702e1-8faa-484e-adb4-dc0fda7b292d)
+:------------------------:|:-------------------------:
+Stable Diffusion v1.5              |  SDXL
+
+
 
