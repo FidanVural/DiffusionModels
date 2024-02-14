@@ -216,24 +216,49 @@ You can see the initial image, the mask and the generated image produced by a st
 
 
 ## STABLE DIFFUSION XL (SDXL)
-The Stable Diffusion XL model ia larger model than v1.5 that it can be used for text to image, image to image and inpatinting tasks. First of all, we'll compare the results of SDXL and stable diffusion v1.5 models. You can see the comparison results below.
+The Stable Diffusion XL model ia larger model than v1.5 that it can be used for text to image, image to image and inpatinting tasks. The SDXL model generates images of size 1024x1024. First of all, we'll compare the results of SDXL and stable diffusion v1.5 models. You can see the comparison results below.
 
-`prompt = "Black white cat with a hat, digital art"`
+prompt: `"Black white cat with a hat, digital art"`
 
-`negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"`
+negative_prompt: `"ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"`
 
 
 ![result_neg_6](https://github.com/FidanVural/DiffusionModels/assets/56233156/27617450-2759-435e-9aae-1caf19fbf44a) | ![cat_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/2a7b9c75-fe7c-4be9-8961-2c4b68df2b65)
 :------------------------:|:-------------------------:
 Stable Diffusion v1.5              |  SDXL
 
-`prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background" + RESOLUTION + LIGHTING + STYLE`
+prompt: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background" + RESOLUTION + LIGHTING + STYLE`
 
-`negative_prompt = "ugly, distorted, deformed, mutation, out of frame"`
+negative_prompt: `"ugly, distorted, deformed, mutation, out of frame"`
 
 ![last](https://github.com/FidanVural/DiffusionModels/assets/56233156/bf380248-9f73-4375-80e3-0ae479902d3e) | ![witch_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/614702e1-8faa-484e-adb4-dc0fda7b292d)
 :------------------------:|:-------------------------:
 Stable Diffusion v1.5              |  SDXL
+
+Now we can explore some hyperparameters. The hyperparameters that I tried first are **prompt_2** and **negative_prompt_2**. SDXL model have two text-encoders, so we can pass different prompts each of them. Let's take a look at the results 🚀 Also, I changed the prompt and the prompt_2 to see the effects of prompts' order to the image :)
+
+prompt: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic, fantasy"`
+
+prompt_2: `"Portrait of a beautiful and powerful witch, highly detailed, surrounded by clouds at night, cyberpunk"`
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/934ccd3c-25e7-4360-acf4-6d8a4a676000">
+</p> 
+
+prompt: `"Portrait of a beautiful and powerful witch, highly detailed, surrounded by clouds at night, cyberpunk"`
+
+prompt_2: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic, fantasy"`
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3275dcfc-d7c8-4937-9184-44584a1d1d74">
+</p> 
+
+Another hyperparameter is **negative_original_size**. You can see the effects of negative_original_size to below images. 
+
+![witch_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/614702e1-8faa-484e-adb4-dc0fda7b292d) | ![512](https://github.com/FidanVural/DiffusionModels/assets/56233156/323cc7fe-5910-4b35-9c63-815137693698) | ![256](https://github.com/FidanVural/DiffusionModels/assets/56233156/bb8ff9c0-aad6-460a-9bbe-e0243dc4ba2c)
+
+:------------------------:|:-------------------------:|:-------------------------:
+Original          |     negative_original_size: 512x512   |  negative_original_size: 256x256
 
 
 
