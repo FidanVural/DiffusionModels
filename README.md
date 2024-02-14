@@ -224,6 +224,6 @@ The Stable Diffusion XL model ia larger model than v1.5 that it can be used for 
 
 
 ![gan_real_opt](https://github.com/FidanVural/GAN/assets/56233156/ebb9816a-e815-4ba8-a419-7263d69e5fbd) | ![gan_fake_opt](https://github.com/FidanVural/GAN/assets/56233156/148ca590-4795-494b-93ec-a925deee9989)
-Target Images             |  Fake Images
 :------------------------:|:-------------------------:
+Target Images             |  Fake Images
 
