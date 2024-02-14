@@ -1,18 +1,20 @@
 
-## TEXT TO IMAGE STABLE DIFFUSION v1.5
-By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. 
+## TEXT TO IMAGE STABLE DIFFUSION
+By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. You can use the basic code below for starting image generation.
 
  ```python
-    iimport torch
+    import torch
     from diffusers import StableDiffusionPipeline
     
     pipeline = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
- 
+    
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
+    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"
     
-    image = pipeline(prompt=prompt, generator=generator).images[0]
+    image = pipeline(prompt=prompt, negative_prompt=negative_prompt, generator=generator, guidance_scale=7.5).images[0]
+    
     image
 ```
 
@@ -137,7 +139,7 @@ Finally, you can take a look at the final image, which includes a negative promp
 You can find a notebook about techniques of prompt in the CODES section of readme and try other styles, lightings, additional keywords, etc.
 
 
-## IMAGE TO IMAGE STABLE DIFFUSION v1.5
+## IMAGE TO IMAGE STABLE DIFFUSION
 
 Image-to-image is quite similar to text to image, with the main difference being the addition of an initial image alongside the prompt. You can take a look the code below.
 
@@ -173,7 +175,7 @@ Image-to-image is quite similar to text to image, with the main difference being
 Additionally, you can check the [img2img](https://github.com/FidanVural/DiffusionModels/tree/master/img2img) directory to see results and explore various hyperparameters.
 
 ## STABLE DIFFUSION INPAINTING
-If you want to modify certain portions of an image, you can use inpainting models. You can use these models to inpaint an image by using a mask.
+If you want to modify certain portions of an image, you can use inpainting models. These models realize inpainting of images by using a mask.
 
  ```python
     import torch
@@ -211,3 +213,51 @@ You can see the initial image, the mask and the generated image produced by a st
 <p align="center">
   <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/39a5180f-2076-475e-92df-64b243a61668">
 </p> 
+
+
+## STABLE DIFFUSION XL (SDXL)
+The Stable Diffusion XL model ia larger model than v1.5 that it can be used for text to image, image to image and inpatinting tasks. The SDXL model generates images of size 1024x1024. First of all, we'll compare the results of SDXL and stable diffusion v1.5 models. You can see the comparison results below.
+
+prompt: `"Black white cat with a hat, digital art"`
+
+negative_prompt: `"ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"`
+
+
+![result_neg_6](https://github.com/FidanVural/DiffusionModels/assets/56233156/27617450-2759-435e-9aae-1caf19fbf44a) | ![cat_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/2a7b9c75-fe7c-4be9-8961-2c4b68df2b65)
+:------------------------:|:-------------------------:
+Stable Diffusion v1.5              |  SDXL
+
+prompt: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background" + RESOLUTION + LIGHTING + STYLE`
+
+negative_prompt: `"ugly, distorted, deformed, mutation, out of frame"`
+
+![last](https://github.com/FidanVural/DiffusionModels/assets/56233156/bf380248-9f73-4375-80e3-0ae479902d3e) | ![witch_xl](https://github.com/FidanVural/DiffusionModels/assets/56233156/614702e1-8faa-484e-adb4-dc0fda7b292d)
+:------------------------:|:-------------------------:
+Stable Diffusion v1.5              |  SDXL
+
+Now we can explore some hyperparameters. The hyperparameters that I tried first are **prompt_2** and **negative_prompt_2**. SDXL model have two text-encoders, so we can pass different prompts each of them. Let's take a look at the results 🚀 Also, I changed the prompt and the prompt_2 to see the effects of prompts' order to the image :)
+
+prompt: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic, fantasy"`
+
+prompt_2: `"Portrait of a beautiful and powerful witch, highly detailed, surrounded by clouds at night, cyberpunk"`
+
+<p align="center">
+  <img width="512" height="512" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/934ccd3c-25e7-4360-acf4-6d8a4a676000">
+</p> 
+
+prompt: `"Portrait of a beautiful and powerful witch, highly detailed, surrounded by clouds at night, cyberpunk"`
+
+prompt_2: `"Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background, highly detailed, surrounded by clouds at night, futuristic, fantasy"`
+
+<p align="center">
+  <img width="512" height="512" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/3275dcfc-d7c8-4937-9184-44584a1d1d74">
+</p> 
+
+Another hyperparameter is **negative_original_size**. You can see the effects of negative_original_size to below images. 
+
+![512](https://github.com/FidanVural/DiffusionModels/assets/56233156/323cc7fe-5910-4b35-9c63-815137693698) | ![256](https://github.com/FidanVural/DiffusionModels/assets/56233156/bb8ff9c0-aad6-460a-9bbe-e0243dc4ba2c)
+:------------------------:|:-------------------------:|
+negative_original_size: 512x512   |  negative_original_size: 256x256
+
+If you want, you can obtain more information from https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl.
+
