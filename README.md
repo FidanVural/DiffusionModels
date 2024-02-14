@@ -175,7 +175,7 @@ Image-to-image is quite similar to text to image, with the main difference being
 Additionally, you can check the [img2img](https://github.com/FidanVural/DiffusionModels/tree/master/img2img) directory to see results and explore various hyperparameters.
 
 ## STABLE DIFFUSION INPAINTING
-If you want to modify certain portions of an image, you can use inpainting models. You can use these models to inpaint an image by using a mask.
+If you want to modify certain portions of an image, you can use inpainting models. These models realize inpainting of images by using a mask.
 
  ```python
     import torch
