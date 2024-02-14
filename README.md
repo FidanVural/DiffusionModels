@@ -213,3 +213,17 @@ You can see the initial image, the mask and the generated image produced by a st
 <p align="center">
   <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/39a5180f-2076-475e-92df-64b243a61668">
 </p> 
+
+
+## STABLE DIFFUSION XL (SDXL)
+The Stable Diffusion XL model ia larger model than v1.5 that it can be used for text to image, image to image and inpatinting tasks. First of all, we'll compare the results of SDXL and stable diffusion v1.5 models. You can see the comparison results below.
+
+`prompt = "Black white cat with a hat, digital art"`
+
+`negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"`
+
+
+![gan_real_opt](https://github.com/FidanVural/GAN/assets/56233156/ebb9816a-e815-4ba8-a419-7263d69e5fbd) | ![gan_fake_opt](https://github.com/FidanVural/GAN/assets/56233156/148ca590-4795-494b-93ec-a925deee9989)
+Target Images             |  Fake Images
+:------------------------:|:-------------------------:
+
