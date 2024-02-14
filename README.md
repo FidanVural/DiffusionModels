@@ -3,16 +3,18 @@
 By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. 
 
  ```python
-    iimport torch
+    import torch
     from diffusers import StableDiffusionPipeline
     
     pipeline = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16").to("cuda")
- 
+    
     generator = torch.Generator(device="cuda").manual_seed(30)
     
     prompt = "Black white cat with a hat, digital art"
+    negative_prompt = "ugly, distorted face, poor details, deformed, big nose, bad art, poorly drawn feet, poorly drawn face, watermark, text, signature, missing arms, missing legs, lying down"
     
-    image = pipeline(prompt=prompt, generator=generator).images[0]
+    image = pipeline(prompt=prompt, negative_prompt=negative_prompt, generator=generator, guidance_scale=7.5).images[0]
+    
     image
 ```
 
