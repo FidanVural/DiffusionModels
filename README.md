@@ -259,5 +259,5 @@ Another hyperparameter is **negative_original_size**. You can see the effects of
 :------------------------:|:-------------------------:|
 negative_original_size: 512x512   |  negative_original_size: 256x256
 
-
+If you want, you can obtain more information from https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl.
 
