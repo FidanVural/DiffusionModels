@@ -1,5 +1,5 @@
 
-## TEXT TO IMAGE STABLE DIFFUSION v1.5
+## TEXT TO IMAGE STABLE DIFFUSION
 By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. You can use the basic code below for starting image generation.
 
  ```python
@@ -139,7 +139,7 @@ Finally, you can take a look at the final image, which includes a negative promp
 You can find a notebook about techniques of prompt in the CODES section of readme and try other styles, lightings, additional keywords, etc.
 
 
-## IMAGE TO IMAGE STABLE DIFFUSION v1.5
+## IMAGE TO IMAGE STABLE DIFFUSION
 
 Image-to-image is quite similar to text to image, with the main difference being the addition of an initial image alongside the prompt. You can take a look the code below.
 
