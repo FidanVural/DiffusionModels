@@ -1,6 +1,6 @@
 
 ## TEXT TO IMAGE STABLE DIFFUSION v1.5
-By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. 
+By using text-to-image pretrained model, you can generate photos from prompts. [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/index) library has pretrained models for generating images. You can use the basic code below for starting image generation.
 
  ```python
     import torch
