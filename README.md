@@ -290,10 +290,10 @@ There are lots of Stable Diffusion XL models that you can try. You can visit htt
     <table>
 	    <tr>
     	    <td style="padding:10px">
-        	    <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/df75b6d7-043e-4636-bb0c-050b98d97079" width="512"/>
+        	    <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/df75b6d7-043e-4636-bb0c-050b98d97079" height=512 width="512"/>
       	    </td>
             <td style="padding:10px">
-            	    <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/462cc0c0-5a64-4229-87cf-49c5aa99a2c1" width="521"/>
+            	    <img src="https://github.com/FidanVural/DiffusionModels/assets/56233156/462cc0c0-5a64-4229-87cf-49c5aa99a2c1" height=512 width="521"/>
             </td>
         </tr>
     </table>
