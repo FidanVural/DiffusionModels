@@ -216,7 +216,28 @@ You can see the initial image, the mask and the generated image produced by a st
 
 
 ## STABLE DIFFUSION XL (SDXL)
-The Stable Diffusion XL model ia larger model than v1.5 that it can be used for text to image, image to image and inpatinting tasks. The SDXL model generates images of size 1024x1024. First of all, we'll compare the results of SDXL and stable diffusion v1.5 models. You can see the comparison results below.
+The Stable Diffusion XL model ia larger model than v1.5 that it can be used for text to image, image to image and inpatinting tasks. The SDXL model generates images of size 1024x1024. 
+
+ ```python
+    import torch
+    from diffusers import StableDiffusionXLPipeline
+
+    pipeline = StableDiffusionXLPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, variant="fp16", use_safetensors=True).to("cuda")
+    generator = torch.Generator(device="cuda").manual_seed(286773456)
+
+    STYLE = "futuristic, fantasy"
+    RESOLUTION = "highly detailed, "
+    LIGHTING = "surrounded by clouds at night, "
+    prompt = "Portrait of a beautiful and powerful witch, wearing a black dress with gemstones, serious eyes, small face, white with highlighted purple hair, windy, witch hat, bats, mountain background" + RESOLUTION + LIGHTING + STYLE
+    
+    negative_prompt = "ugly, distorted, deformed, mutation, out of frame"
+    
+    image = pipeline(prompt=prompt, negative_prompt=negative_prompt, generator=generator).images[0]
+    
+    image
+```
+
+First of all, we'll compare the results of SDXL and stable diffusion v1.5 models. You can see the comparison results below.
 
 prompt: `"Black white cat with a hat, digital art"`
 
