@@ -299,4 +299,12 @@ There are lots of Stable Diffusion XL models that you can try. You can visit htt
     </table>
 </div>
 
+## CONTROLNET
 
+ControlNet which is a neural network structure to control diffusion models provides you a better control over generated image by giving additional image like canny edge image or depth image. We called `control image`. For instance, you can obtain canny image from canny image detector and use this for image generation. You can take a look below images.
+
+<p align="center">
+  <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/c78851de-8cf4-4a13-a287-529befdd7985">
+</p> 
+
+Additionally, You can use the huggingface pipeline to load models for tasks such as segmentation and depth to obtain a control image. You can learn more from [controlnet](https://github.com/FidanVural/DiffusionModels/tree/master/controlnet) notebook. 
