@@ -307,7 +307,7 @@ ControlNet which is a neural network structure to control diffusion models provi
   <img width="900" height="350" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/c78851de-8cf4-4a13-a287-529befdd7985">
 </p> 
 
-Additionally, You can use the huggingface pipeline to load models for tasks such as segmentation and depth to obtain a control image. You can learn more from [controlnet](https://github.com/FidanVural/DiffusionModels/tree/master/controlnet) notebook. 
+Additionally, You can use the huggingface pipeline to load models for tasks such as segmentation and depth to obtain a control image. You can learn more from [controlnet](https://github.com/FidanVural/DiffusionModels/tree/master/controlnet) notebook and https://huggingface.co/docs/diffusers/en/using-diffusers/controlnet. 
 
 <p align="center">
   <img width="900" height="300" src="https://github.com/FidanVural/DiffusionModels/assets/56233156/2293d145-554f-4d01-acea-1a74d7f14f6f">
